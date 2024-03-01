@@ -1,0 +1,15 @@
+Port 22
+Protocol 2
+HostKey /etc/ssh/id_rsa
+Match Address 10.10.1.0/24
+    AllowUsers whiteteam #Add more later
+    DenyUsers redteam notredteam #more to be added
+    ChallengeResponseAuthentication Yes
+    PasswordAuthentication Yes
+    PubkeyAuthentication No
+    MaxSessions 2
+MaxAuthTries 3
+LoginGraceTime 30s
+PermitRootLogin No
+PermitEmptyPasswords No
+
